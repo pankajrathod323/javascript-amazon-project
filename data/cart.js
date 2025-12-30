@@ -24,4 +24,6 @@ export function addToCart(productId) {
       quantity: 1
     });
   }
+
+  console.log(cart);
 }
