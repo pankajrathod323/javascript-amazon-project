@@ -60,7 +60,7 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
      }
 });
   
-matchingItem.deliveryOptionId = deliveryOptionId;
-saveToStorage();
+  matchingItem.deliveryOptionId = deliveryOptionId;
+  saveToStorage();
 
 }

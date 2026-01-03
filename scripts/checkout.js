@@ -52,7 +52,7 @@ cart.forEach((cartItem) => {
                   <span class="update-quantity-link link-primary">
                     Update
                   </span>
-                  <span class="delete-quantity-link js-delete-link link-primary" data-product-id=${matchingProduct.id}>
+                  <span class="delete-quantity-link js-delete-link link-primary" data-product-id="${matchingProduct.id}">
                     Delete
                   </span>
                 </div>
@@ -79,7 +79,7 @@ function deliveryOptionsHTML(matchingProduct, cartItem){
      const isChecked = deliveryOption.id === cartItem.deliveryOptionId
      html += `
       <div class="delivery-option js-delivery-option"
-          data-product-id=${matchingProduct.id} data-deliveryOption-id=${deliveryOption.id}>
+          data-product-id="${matchingProduct.id}" data-delivery-option-id="${deliveryOption.id}">
               <input type="radio"
                 ${isChecked ? 'checked' : ''}
                 class="delivery-option-input"
