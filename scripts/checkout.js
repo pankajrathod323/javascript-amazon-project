@@ -5,16 +5,26 @@ import { loadCart } from "../data/cart.js";
 // import '../data/backend-practice.js';
 
 async function loadPage() {
-   await loadProductsFetch();
-   
-   const value = await new Promise((resolve) => {
+  try {
+    // throw 'error occured'
+    await loadProductsFetch();
+
+    const value = await new Promise((resolve, reject) => {
+      // throw 'error 2'
       loadCart(() => {
+        // reject('error 3')
         resolve('value3');
       });
-   });
+    });
 
-   renderOrderSummary();
-   renderPaymentSummary();
+  } catch(error){
+       console.log("Unexpected error occured. Please try again later");
+
+  }
+
+
+  renderOrderSummary();
+  renderPaymentSummary();
 
 }
 
@@ -27,7 +37,7 @@ loadPage();
 //       loadCart(() => {
 //         resolve("value2");
 //       });
-//    })   
+//    })
 // ]).then((values) => {
 //   console.log(values);
 //   renderPaymentSummary();
